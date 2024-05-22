@@ -1,0 +1,42 @@
+<% result.forEach(function(data){ var hobby=data.hobby; let hobby_arr = hobby.split(",");%>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" value="<%= data.name%>"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" value="<%= data.email%>"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" value="<%= data.password%>"></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text"  name="address" value="<%= data.address%>"></td>
+            </tr>
+            
+            <tr>
+                <td>City:</td>
+                <td><input type="text" name="city" value="<%= data.city%>"></td>
+            </tr>
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="number" name="mobile" value="<%= data.mobile%>"></td>
+            </tr>
+            <tr>
+                <td>Hobby:</td>
+                <td><input type="checkbox" name="hobby" value="writing" <% if(hobby_arr.includes("writing")) {%> checked <% } %> >writing
+                    <input type="checkbox" name="hobby" value="music" <% if(hobby_arr.includes("music")) {%> checked <% } %>>Music
+                    <input type="checkbox" name="hobby" value="reading" <% if(hobby_arr.includes("reading")) {%> checked <% } %>>Reading
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="update" value="update"></td>
+            </tr>
+        </table>
+    </form>  
+<% });%>   
